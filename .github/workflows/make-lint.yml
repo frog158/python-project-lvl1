@@ -1,4 +1,4 @@
-name: brain_games 
+name: make-lint 
 
 on: [push]
 
