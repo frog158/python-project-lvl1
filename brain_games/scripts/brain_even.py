@@ -5,7 +5,7 @@ from brain_games import even
 
 
 def main():
-    """Main function."""
+    """Let's start the even game."""
     even.start_game()
 
 
