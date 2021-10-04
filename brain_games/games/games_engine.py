@@ -6,12 +6,13 @@
 import prompt
 
 
-def welcome_user(ask_str):
+def welcome_user(ask_string):
     """Welcome user fuction.
 
     Ask his name and print.
+
     Args:
-        ask_str: question in the game 
+        ask_string: question in the game
 
     Returns:
         string: User Name.
@@ -20,7 +21,7 @@ def welcome_user(ask_str):
     print('Welcome to the Brain Games!')
     user_name = prompt.string('May I have your name? ')
     print('Hello, {0}!'.format(user_name))
-    print(ask_str)
+    print(ask_string)
     return user_name
 
 
