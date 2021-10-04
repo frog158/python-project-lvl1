@@ -6,10 +6,12 @@
 import prompt
 
 
-def welcome_user():
+def welcome_user(ask_str):
     """Welcome user fuction.
 
     Ask his name and print.
+    Args:
+        ask_str: question in the game 
 
     Returns:
         string: User Name.
@@ -18,6 +20,7 @@ def welcome_user():
     print('Welcome to the Brain Games!')
     user_name = prompt.string('May I have your name? ')
     print('Hello, {0}!'.format(user_name))
+    print(ask_str)
     return user_name
 
 
@@ -55,14 +58,15 @@ def ask_question(question):
     return prompt.string('Your answer: ')
 
 
-def start_engine(list_of_question):
+def start_engine(ask_str, list_of_question):
     """Start engin of games.
 
     Args:
+        ask_str: string with questinon
         list_of_question: list of tuple.
 
     """
-    user_name = welcome_user()
+    user_name = welcome_user(ask_str)
     index = 0
     while index < 3:
         question, correct_answer = list_of_question[index]

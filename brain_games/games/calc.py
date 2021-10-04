@@ -39,4 +39,4 @@ def start_game():
     while index <= 3:
         list_of_question.append(gerate_tuple_of_question())
         index += 1
-    start_engine(list_of_question)
+    start_engine('What is the result of the expression?', list_of_question)
