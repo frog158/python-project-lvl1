@@ -3,6 +3,7 @@ name = "hexlet-code"
 version = "0.1.0"
 description = "My first project on Hexlet"
 authors = ["Nikolai Markov <frog158@gmail.com>"]
+repository = "https://github.com/frog158/python-project-lvl1"
 packages = [
 	{ include = "brain_games" },
 ]
