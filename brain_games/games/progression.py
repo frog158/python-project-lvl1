@@ -31,10 +31,10 @@ def gerate_tuple_of_question():
 
     while index <= 10:
         if index == progression[2]:
-            question = '{0} {1}'.format(question, '..')
+            question = '{0}{1} '.format(question, '..')
             answer = progression_start
         else:
-            question = '{0} {1}'.format(question, str(progression_start))
+            question = '{0}{1} '.format(question, str(progression_start))
         progression_start += progression[1]
         index += 1
     return (question, str(answer))
