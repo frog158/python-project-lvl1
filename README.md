@@ -9,3 +9,5 @@
 [![asciicast](https://asciinema.org/a/3KmEAOEnBkRaRj6Uy5wtEa3s5.svg)](https://asciinema.org/a/3KmEAOEnBkRaRj6Uy5wtEa3s5)
 ### Brain GCD
 [![asciicast](https://asciinema.org/a/R1l9lT6Zf6EsC5M71sdiobwYP.svg)](https://asciinema.org/a/R1l9lT6Zf6EsC5M71sdiobwYP)
+### Brain Progression
+[![asciicast](https://asciinema.org/a/Xrqe1MPOfpGMCLdu49c8INH71.svg)](https://asciinema.org/a/Xrqe1MPOfpGMCLdu49c8INH71)
