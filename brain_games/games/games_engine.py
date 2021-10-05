@@ -41,7 +41,7 @@ def incorrect(user_name, user_answer, correct_answer):
     """
     wrong_answer = "\'{0}\' is wrong answer ;(.".format(user_answer)
     correct_answer = "Correct answer was \'{0}\'".format(correct_answer)
-    print("{0} {1}\'.".format(wrong_answer, correct_answer))
+    print("{0} {1}.".format(wrong_answer, correct_answer))
     print("Let\'s try again, {0}!".format(user_name))
 
 
