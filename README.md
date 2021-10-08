@@ -1,5 +1,5 @@
 ### CodeClimat 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b748f7ee4038dc529e98/maintainability)](https://codeclimate.com/github/frog158/python-project-lvl1/maintainability)
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/frog158/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/frog158/python-project-lvl1/actions)
 [![make lint](https://github.com/frog158/python-project-lvl1/workflows/make-lint/badge.svg)](https://github.com/frog158/python-project-lvl1/actions)
