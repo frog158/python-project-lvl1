@@ -4,6 +4,7 @@
 
 
 import prompt
+from brain_games.games import calc, even, gcd, prime, progression
 
 
 def welcome_user(ask_string):
@@ -68,14 +69,51 @@ def start_engine(ask_str, list_of_question):
 
     """
     user_name = welcome_user(ask_str)
-    index = 0
-    while index < 3:
-        question, correct_answer = list_of_question[index]
+    for question, correct_answer in list_of_question:
         answer = ask_question(question)
         if correct_answer != answer:
             incorrect(user_name, answer, correct_answer)
             return
         correct()
-        index += 1
     # Поздравления
     print('Congratulations, {0}!'.format(user_name))
+
+
+def get_list_question(generate):
+    """Generate list of question.
+
+    Args:
+        generate: function which generate question
+
+    Returns:
+        returns - list of question
+    """
+    NUM_OF_ROUND = 3
+    list_of_question = []
+    for _ in range(0, NUM_OF_ROUND):
+        list_of_question.append(generate())
+    return list_of_question
+
+
+def start_games(name_of_game):
+    """Root function of all games.
+
+    Args:
+        name_of_game: string name of games
+
+    """
+    games_function = ([
+        ('calc', calc.generate_question, calc.get_start_msg),
+        (
+            'progression',
+            progression.generate_question,
+            progression.get_start_msg,
+        ),
+        ('prime', prime.generate_question, prime.get_start_msg),
+        ('gcd', gcd.generate_question, gcd.get_start_msg),
+        ('even', even.generate_question, even.get_start_msg),
+    ])
+    for name, generate, get in games_function:
+        if name == name_of_game:
+            start_engine(get(), get_list_question(generate))
+            break

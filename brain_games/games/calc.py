@@ -3,40 +3,53 @@
 """Calc game."""
 
 
-from random import randint
-
-from brain_games.games.games_engine import start_engine
+from random import choice, randint
 
 
-def gerate_tuple_of_question():
+def get_operand():
+    """Generate operand.
+
+    Returns:
+        return - operand
+    """
+    START_OF_RANGE = 1
+    END_OF_RANGE = 100
+    return (randint(START_OF_RANGE, END_OF_RANGE))
+
+
+def get_question():
+    """Generate two operands and operator.
+
+    Returns:
+        return - tuple operands and operator
+    """
+    OPERATOR_LIST = ['+', '-', '*']
+    x1 = get_operand()
+    x2 = get_operand()
+    operator_string = choice(OPERATOR_LIST)
+    return (x1, x2, operator_string)
+
+
+def generate_question():
     """Generate question and answer.
 
     Returns:
             retruns - tuple of question and answer
     """
-    x1 = randint(1, 100)
-    x2 = randint(1, 100)
-    operator = randint(1, 3)
-    if operator == 1:
-        operator_string = '+'
+    x1, x2, operator_string = get_question()
+    if operator_string == '+':
         answer = str(x1 + x2)
-    elif operator == 2:
-        operator_string = '-'
+    elif operator_string == '-':
         answer = str(x1 - x2)
     else:
-        operator_string = '*'
         answer = str(x1 * x2)
     return ('{0} {2} {1}'.format(str(x1), str(x2), operator_string), answer)
 
 
-def start_game():
-    """Start of calc game.
+def get_start_msg():
+    """Return start message.
 
-    We will ask user three question.
+    Returns:
+        returns - string. Start message
     """
-    index = 1
-    list_of_question = []
-    while index <= 3:
-        list_of_question.append(gerate_tuple_of_question())
-        index += 1
-    start_engine('What is the result of the expression?', list_of_question)
+    return 'What is the result of the expression?'

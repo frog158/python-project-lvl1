@@ -5,7 +5,38 @@
 
 from random import randint
 
-from brain_games.games.games_engine import start_engine
+
+def generate_start_progression():
+    """Generate start of progression.
+
+    Returns:
+        start of progression
+    """
+    START_OF_RANGE = 1
+    END_OF_RANGE = 20
+    return randint(START_OF_RANGE, END_OF_RANGE)
+
+
+def generate_delta():
+    """Generate delta.
+
+    Returns:
+        delta of progression
+    """
+    START_OF_RANGE = 1
+    END_OF_RANGE = 9
+    return randint(START_OF_RANGE, END_OF_RANGE)
+
+
+def generate_answer():
+    """Generate answer.
+
+    Returns:
+        return answer
+    """
+    START_OF_RANGE = 1
+    END_OF_RANGE = 10
+    return randint(START_OF_RANGE, END_OF_RANGE)
 
 
 def generate_progression():
@@ -14,11 +45,10 @@ def generate_progression():
     Returns:
         Возворащает кортеж
     """
-    start_progression = 20
-    return (randint(1, start_progression), randint(1, 9), randint(1, 9))
+    return (generate_start_progression(), generate_delta(), generate_answer())
 
 
-def gerate_tuple_of_question():
+def generate_question():
     """Generate question and answer.
 
     Returns:
@@ -27,8 +57,8 @@ def gerate_tuple_of_question():
     progression = generate_progression()
     index = 1
     question = ''
+    answer = 0
     progression_start = progression[0]
-
     while index <= 10:
         if index == progression[2]:
             question = '{0}{1} '.format(question, '..')
@@ -40,15 +70,10 @@ def gerate_tuple_of_question():
     return (question, str(answer))
 
 
-def start_game():
-    """Start of progression game.
+def get_start_msg():
+    """Return start message.
 
-    We will ask user three question.
+    Returns:
+        returns - string. Start message
     """
-    index = 1
-    list_of_question = []
-    while index <= 3:
-        list_of_question.append(gerate_tuple_of_question())
-        index += 1
-    ask_string = 'What number is missing in the progression?'
-    start_engine(ask_string, list_of_question)
+    return 'What number is missing in the progression?'

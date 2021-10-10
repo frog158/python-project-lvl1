@@ -6,8 +6,6 @@
 from math import sqrt
 from random import randint
 
-from brain_games.games.games_engine import start_engine
-
 
 def is_prime(num):
     """Проверяет простое число или нет .
@@ -32,26 +30,23 @@ def is_prime(num):
     return 'yes'
 
 
-def gerate_tuple_of_question():
+def generate_question():
     """Generate question and answer.
 
     Returns:
             retruns - tuple of question and answer
     """
-    num = randint(1, 100)
+    START_OF_RANGE = 1
+    END_OF_RANGE = 100
+    num = randint(START_OF_RANGE, END_OF_RANGE)
     answer = is_prime(num)
     return (str(num), answer)
 
 
-def start_game():
-    """Start of prime game.
+def get_start_msg():
+    """Return start message.
 
-    We will ask user three question.
+    Returns:
+        returns - string. Start message
     """
-    index = 1
-    list_of_question = []
-    while index <= 3:
-        list_of_question.append(gerate_tuple_of_question())
-        index += 1
-    ask_string = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-    start_engine(ask_string, list_of_question)
+    return 'Answer "yes" if given number is prime. Otherwise answer "no".'

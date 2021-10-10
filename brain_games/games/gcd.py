@@ -5,8 +5,6 @@
 
 from random import randint
 
-from brain_games.games.games_engine import start_engine
-
 
 def find_gcd(x1, x2):
     """Find the gdc of.
@@ -16,7 +14,7 @@ def find_gcd(x1, x2):
         x2: two
 
     Returns:
-        returns: gcd of tow integer
+        returns: gcd of two integer
     """
     while x1 != 0 and x2 != 0:
         if x1 > x2:
@@ -26,27 +24,24 @@ def find_gcd(x1, x2):
     return (x1 + x2)
 
 
-def gerate_tuple_of_question():
+def generate_question():
     """Generate question and answer.
 
     Returns:
             retruns - tuple of question and answer
     """
-    x1 = randint(1, 100)
-    x2 = randint(1, 100)
+    START_OF_RANGE = 1
+    END_OF_RANGE = 100
+    x1 = randint(START_OF_RANGE, END_OF_RANGE)
+    x2 = randint(START_OF_RANGE, END_OF_RANGE)
     answer = find_gcd(x1, x2)
     return ('{0} {1}'.format(str(x1), str(x2)), str(answer))
 
 
-def start_game():
-    """Start of calc game.
+def get_start_msg():
+    """Return start message.
 
-    We will ask user three question.
+    Returns:
+        returns - string. Start message
     """
-    index = 1
-    list_of_question = []
-    while index <= 3:
-        list_of_question.append(gerate_tuple_of_question())
-        index += 1
-    ask_string = 'Find the greatest common divisor of given numbers.'
-    start_engine(ask_string, list_of_question)
+    return 'Find the greatest common divisor of given numbers.'
