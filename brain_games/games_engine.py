@@ -26,11 +26,6 @@ def welcome_user(ask_string):
     return user_name
 
 
-def correct():
-    """Print if answer is correct."""
-    print('Correct!')
-
-
 def incorrect(user_name, user_answer, correct_answer):
     """Print if answer is incorect.
 
@@ -74,7 +69,7 @@ def start_engine(ask_str, list_of_question):
         if correct_answer != answer:
             incorrect(user_name, answer, correct_answer)
             return
-        correct()
+        print('Correct!')
     # Поздравления
     print('Congratulations, {0}!'.format(user_name))
 
