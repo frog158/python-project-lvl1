@@ -5,8 +5,10 @@
 
 from random import randint
 
+ASK_STR = 'Answer "yes" if the number is even, otherwise answer "no".'
 
-def generate_question():
+
+def generate_question_and_answer():
     """Generate question and answer.
 
     Returns:
@@ -19,12 +21,3 @@ def generate_question():
     if num % 2 == 0:
         answer = 'yes'
     return (num, answer)
-
-
-def get_start_msg():
-    """Return start message.
-
-    Returns:
-        returns - string. Start message
-    """
-    return 'Answer "yes" if the number is even, otherwise answer "no".'

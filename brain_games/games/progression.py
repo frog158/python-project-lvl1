@@ -5,38 +5,7 @@
 
 from random import randint
 
-
-def generate_start_progression():
-    """Generate start of progression.
-
-    Returns:
-        start of progression
-    """
-    START_OF_RANGE = 1
-    END_OF_RANGE = 20
-    return randint(START_OF_RANGE, END_OF_RANGE)
-
-
-def generate_delta():
-    """Generate delta.
-
-    Returns:
-        delta of progression
-    """
-    START_OF_RANGE = 1
-    END_OF_RANGE = 9
-    return randint(START_OF_RANGE, END_OF_RANGE)
-
-
-def generate_answer():
-    """Generate answer.
-
-    Returns:
-        return answer
-    """
-    START_OF_RANGE = 1
-    END_OF_RANGE = 10
-    return randint(START_OF_RANGE, END_OF_RANGE)
+ASK_STR = 'What number is missing in the progression?'
 
 
 def generate_progression():
@@ -45,21 +14,32 @@ def generate_progression():
     Returns:
         Возворащает кортеж
     """
-    return (generate_start_progression(), generate_delta(), generate_answer())
+    START_OF_PROGRESSION = 1
+    END_OF_PROGRESSION = 20
+    start_of_progression = randint(START_OF_PROGRESSION, END_OF_PROGRESSION)
+    START_OF_DELTA = 1
+    END_OF_DELTA = 10
+    delta = randint(START_OF_DELTA, END_OF_DELTA)
+    START_OF_ANSWER = 1
+    END_OF_ANSWER = 10
+    answer = randint(START_OF_ANSWER, END_OF_ANSWER)
+
+    return (start_of_progression, delta, answer)
 
 
-def generate_question():
+def generate_question_and_answer():
     """Generate question and answer.
 
     Returns:
             retruns - tuple of question and answer
     """
+    LEN_OF_PROGRESSION = 10
     progression = generate_progression()
     index = 1
     question = ''
     answer = 0
     progression_start = progression[0]
-    while index <= 10:
+    while index <= LEN_OF_PROGRESSION:
         if index == progression[2]:
             question = '{0}{1} '.format(question, '..')
             answer = progression_start
@@ -68,12 +48,3 @@ def generate_question():
         progression_start += progression[1]
         index += 1
     return (question, str(answer))
-
-
-def get_start_msg():
-    """Return start message.
-
-    Returns:
-        returns - string. Start message
-    """
-    return 'What number is missing in the progression?'

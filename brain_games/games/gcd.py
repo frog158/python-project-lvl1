@@ -5,6 +5,8 @@
 
 from random import randint
 
+ASK_STR = 'Find the greatest common divisor of given numbers.'
+
 
 def find_gcd(x1, x2):
     """Find the gdc of.
@@ -24,7 +26,7 @@ def find_gcd(x1, x2):
     return (x1 + x2)
 
 
-def generate_question():
+def generate_question_and_answer():
     """Generate question and answer.
 
     Returns:
@@ -36,12 +38,3 @@ def generate_question():
     x2 = randint(START_OF_RANGE, END_OF_RANGE)
     answer = find_gcd(x1, x2)
     return ('{0} {1}'.format(str(x1), str(x2)), str(answer))
-
-
-def get_start_msg():
-    """Return start message.
-
-    Returns:
-        returns - string. Start message
-    """
-    return 'Find the greatest common divisor of given numbers.'
